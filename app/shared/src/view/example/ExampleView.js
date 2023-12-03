@@ -1,4 +1,4 @@
-Ext.define('ExtJsExamples.view.ex.View', {
+Ext.define('ExtJsExamples.view.ex.ExampleView', {
     extend: 'Ext.Container',
     xtype: 'example-view',
     reference: 'example-view',

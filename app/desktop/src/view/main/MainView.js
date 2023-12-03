@@ -17,7 +17,13 @@ Ext.define('ExtJsExamples.view.main.MainView', {
 			xtype: 'tabpanel',
 			items: [
 				{
-					xtype: 'ex01-view-web-pack-require-view'
+					xtype: 'ex01-web-pack-require-view'
+				},
+				{
+					xtype: 'ex02-head-link-view'
+				},
+				{
+					xtype: 'ex03-ext-define-link-view'
 				}
 			]
 		}
