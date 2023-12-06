@@ -19,6 +19,12 @@ Ext.define('ExtJsExamples.view.main.MainView', {
 		},
 		{
 			xtype: 'ex04-render-to-body-view'
+		},
+		{
+			xtype: 'ex05-reusable-map-component',
+			lo: 0.00087,
+			la: 51.47733,
+			zoom: 14
 		}
 	]
 });

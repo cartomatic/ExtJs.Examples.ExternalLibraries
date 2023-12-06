@@ -1,7 +1,6 @@
 Ext.define('ExtJsExamples.view.ex.Example03ExtDefineLinkView', {
     extend: 'Ext.Panel',
     xtype: 'ex03-ext-define-link-view',
-    reference: 'ex03-ext-define-link-view',
     controller: 'ex03-ext-define-link-view',
     viewModel: {
         type: 'ex03-ext-define-link-view'

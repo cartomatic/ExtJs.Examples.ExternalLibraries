@@ -1,7 +1,6 @@
 Ext.define('ExtJsExamples.view.ex.Example02HeadLinkView', {
     extend: 'Ext.Panel',
     xtype: 'ex02-head-link-view',
-    reference: 'ex02-head-link-view',
     controller: 'ex02-head-link-view',
     viewModel: {
         type: 'ex02-head-link-view'

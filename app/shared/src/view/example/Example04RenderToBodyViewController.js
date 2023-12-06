@@ -29,8 +29,8 @@ Ext.define('ExtJsExamples.view.ex.Example04RenderToBodyViewController', {
 
         let mapContainerId = this.generateMapContainerId();
 
-        //render map holder into container's el
-        Ext.get(sender.getEl().dom.id + '-bodyWrap').dom.innerHTML =
+        //render map holder into panel's body
+        sender.body.dom.innerHTML =
             '<div id="' + mapContainerId + '" style="position:absolute; overflow: hidden; width: 100%; height: 100%;"></div>';
 
         this.createMap(mapContainerId);
@@ -104,7 +104,7 @@ Ext.define('ExtJsExamples.view.ex.Example04RenderToBodyViewController', {
             })
         });
 
-        this.getView().fireEvent('mapcontainer::mapcreated', this.map);
+            this.getView().fireEvent('mapcontainer::mapcreated', this.map);
     },
 
     /**
