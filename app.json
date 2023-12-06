@@ -11,7 +11,7 @@
 
   "builds": {
     "desktop": {
-      "toolkit": "modern",
+      "toolkit": "classic",
       "theme": "theme-material",
       "sass": {
         "generated": {

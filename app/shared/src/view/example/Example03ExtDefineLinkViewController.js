@@ -22,7 +22,6 @@ Ext.define('ExtJsExamples.view.ex.Example03ExtDefineLinkViewController', {
             }
         );
     }
-
 }, () => {
     ExtJsExamples.util.Loader.load({
         fileList: [

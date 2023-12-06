@@ -31,6 +31,8 @@
   },
   "dependencies": {
     "@sencha/ext": "~7.7.0",
+    "@sencha/ext-classic": "^7.7.0",
+    "@sencha/ext-classic-theme-material": "^7.7.0",
     "@sencha/ext-modern": "~7.7.0",
     "@sencha/ext-modern-theme-material": "~7.7.0",
     "moment": "^2.29.4"

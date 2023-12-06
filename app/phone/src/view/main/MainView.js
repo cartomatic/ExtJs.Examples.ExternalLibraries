@@ -16,6 +16,9 @@ Ext.define('ExtJsExamples.view.main.MainView', {
 		},
 		{
 			xtype: 'ex03-ext-define-link-view'
+		},
+		{
+			xtype: 'ex04-render-to-body-view'
 		}
 	]
 });

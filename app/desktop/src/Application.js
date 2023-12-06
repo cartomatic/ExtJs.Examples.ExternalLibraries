@@ -15,7 +15,12 @@ Ext.define('ExtJsExamples.Application', {
 	launch: function () {
 		this.removeSplash()
 
-		Ext.create('ExtJsExamples.view.main.MainView');
+		if (Ext.isClassic == true) {
+			Ext.create({xtype: 'main-view', plugins: 'viewport'})
+		}
+		else {
+			Ext.Viewport.add([{xtype: 'main-view'}])
+		}
 	},
 
 	onAppUpdate: function () {
