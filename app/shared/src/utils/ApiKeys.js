@@ -29,9 +29,6 @@
         apiKeys: {},
 
         getApiKey: function(api){
-            if(!this.apiKeys[api]){
-                return `unknown api key: ${api}`;
-            }
             return this.apiKeys[api];
         }
 

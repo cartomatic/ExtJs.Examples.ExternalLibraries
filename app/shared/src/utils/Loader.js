@@ -19,7 +19,7 @@
          * @returns {Element}
          */
         buildScriptTag: function(filename, callback) {
-            let rnd = '?dc=' + (new Date()).getTime();
+            let rnd = (filename.indexOf('?') > -1 ? '&' : '?') + 'dc=' + (new Date()).getTime();
             let exten = filename.substr(filename.lastIndexOf('.')+1);
 
             if(exten=='css') {

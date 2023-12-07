@@ -16,7 +16,7 @@ Ext.define('ExtJsExamples.view.ex.Example08StreetViewViewController', {
             lo = vw.getLo(),
             la = vw.getLa();
 
-        return `https://www.google.com/maps/embed/v1/streetview?key=${ExtJsExamples.util.ApiKeys.getApiKey('gMaps')}&location=${lo},${la}`;
+        return `https://www.google.com/maps/embed/v1/streetview?key=${ExtJsExamples.util.ApiKeys.getApiKey('gMaps')}&location=${la},${lo}`;
     },
 
     /**

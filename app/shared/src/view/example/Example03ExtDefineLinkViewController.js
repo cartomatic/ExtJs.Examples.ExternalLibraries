@@ -3,7 +3,8 @@ Ext.define('ExtJsExamples.view.ex.Example03ExtDefineLinkViewController', {
     alias: 'controller.ex03-ext-define-link-view',
 
     requires: [
-        'ExtJsExamples.util.Loader'
+        'ExtJsExamples.util.Loader',
+        'ExtJsExamples.util.ApiKeys'
     ],
 
     init: function () {
@@ -23,10 +24,20 @@ Ext.define('ExtJsExamples.view.ex.Example03ExtDefineLinkViewController', {
         );
     }
 }, () => {
-    ExtJsExamples.util.Loader.load({
-        fileList: [
-            'https://maps.googleapis.com/maps/api/js?key=' //note: maps api key is required in order to use google maps
-        ],
-        callback: () => {console.log("GoogleMaps script loaded :)")}
-    });
+
+    let linkGmaps = function(){
+        let apiKey = ExtJsExamples.util.ApiKeys.getApiKey('gMaps');
+        if(!apiKey){
+            console.warn('no api keys yet!');
+            setTimeout(linkGmaps, 500);
+            return;
+        }
+        ExtJsExamples.util.Loader.load({
+            fileList: [
+                `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=` //note: maps api key is required in order to use google maps
+            ],
+            callback: () => {console.log("GoogleMaps script loaded :)")}
+        });
+    }
+    linkGmaps();
 });

@@ -6,13 +6,17 @@ Ext.define('ExtJsExamples.view.ex.Example03ExtDefineLinkView', {
         type: 'ex03-ext-define-link-view'
     },
     title: 'ExtDefineLink',
-    layout: 'center',
+    layout: {
+        type: 'vbox',
+        alight: 'stretch'
+    },
     items: [
         {
             xtype: 'button',
             text: 'Render map',
             listeners: {
-                tap: 'renderMap'
+                tap: 'renderMap',
+                click: 'renderMap'
             }
         },
         {

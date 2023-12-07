@@ -6,13 +6,17 @@ Ext.define('ExtJsExamples.view.ex.Example02HeadLinkView', {
         type: 'ex02-head-link-view'
     },
     title: 'HeadLink',
-    layout: 'center',
+    layout: {
+        type: 'vbox',
+        alight: 'stretch'
+    },
     items: [
         {
             xtype: 'button',
             text: 'Render map',
             listeners: {
-                tap: 'renderMap'
+                tap: 'renderMap',
+                click: 'renderMap'
             }
         },
         {
