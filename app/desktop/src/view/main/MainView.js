@@ -58,7 +58,34 @@ Ext.define('ExtJsExamples.view.main.MainView', {
 							xtype: 'ex06-reusable-3d-map-component'
 						}
 					]
-				}
+				},
+				{
+					xtype: 'ex08-street-view-view'
+				},
+				{
+					xtype: 'panel',
+					title: 'Panellum',
+					layout: {
+						type: 'hbox',
+						align: 'stretch'
+					},
+					defaults: {
+						flex: 1
+					},
+					items: [
+						{
+							xtype: 'ex09-panellum-view',
+							title: 'Alma - Auto Load'
+						},
+						{
+							xtype: 'ex09-panellum-view',
+							title: 'Cerro Toco - manual load',
+							panoramaUri: 'https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg',
+							autoLoad: false
+						}
+					]
+				},
+
 
 			]
 		}

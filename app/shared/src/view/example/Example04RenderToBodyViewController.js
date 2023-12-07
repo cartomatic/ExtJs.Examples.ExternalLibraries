@@ -10,13 +10,13 @@ Ext.define('ExtJsExamples.view.ex.Example04RenderToBodyViewController', {
 
         switch(Ext.toolkit){
             case 'classic':
-                this.getView().on('render', this.onRender, this); //renders in the background as a markup, so no explicit sizing yet
-                //this.getView().on('afterlayout', this.onRender, this, {single: true}); //fires after the layout, so map should adjust nicely to the actual sizing
+                this.getView().on('render', this.initHostingContainer, this); //renders in the background as a markup, so no explicit sizing yet
+                //this.getView().on('afterlayout', this.onRender, this, {single: true}); //alternative approach when render does not seem to fit with proper timing fires after the layout, so map should adjust nicely to the actual sizing
                 break;
 
             case 'modern':
                 //this.getView().on('painted', this.onPainted, this); //this keeps on firing on re-paint!
-                this.getView().on('painted', this.onPainted, this, {single: true}); //this fires once only
+                this.getView().on('painted', this.initHostingContainer, this, {single: true}); //this fires once only
                 break;
 
             default:
@@ -24,28 +24,14 @@ Ext.define('ExtJsExamples.view.ex.Example04RenderToBodyViewController', {
         }
     },
 
-    onRender: function(sender, eOpts){
-        console.log('render');
-
+    initHostingContainer: function(sender){
         let mapContainerId = this.generateMapContainerId();
+
+        console.log('sender', sender);
 
         //render map holder into panel's body
-        sender.body.dom.innerHTML =
-            '<div id="' + mapContainerId + '" style="position:absolute; overflow: hidden; width: 100%; height: 100%;"></div>';
-
-        this.createMap(mapContainerId);
-
-        sender.on('resize', this.onViewResize, this);
-    },
-
-    onPainted: function(sender, element, eOpts){
-        console.log('painted');
-
-        let mapContainerId = this.generateMapContainerId();
-
-        //render map holder into container's el
-        //e.el.dom starts with extjs 6.5
-        (sender.dom || sender.el.dom).children[1].innerHTML =
+        //body for classic, bodyElement for modern
+        (sender.body || sender.bodyElement).dom.innerHTML =
             '<div id="' + mapContainerId + '" style="position:absolute; overflow: hidden; width: 100%; height: 100%;"></div>';
 
         this.createMap(mapContainerId);
