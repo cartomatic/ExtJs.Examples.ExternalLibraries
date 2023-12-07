@@ -5,5 +5,18 @@ Ext.define('ExtJsExamples.view.ex.Example10CKEditorView', {
     viewModel: {
         type: 'ex10-ckeditor-view'
     },
-    title: 'CKEditor'
+    title: 'CKEditor',
+    bbar: [
+        '->',
+        {
+            xtype: 'button',
+            text: 'Set demo HTML',
+            handler: 'setHtml'
+        },
+        {
+            xtype: 'button',
+            text: 'Dump HTML to console',
+            handler: 'dumpHtml'
+        }
+    ]
 });

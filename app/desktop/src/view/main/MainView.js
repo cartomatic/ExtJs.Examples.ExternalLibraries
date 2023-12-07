@@ -85,8 +85,9 @@ Ext.define('ExtJsExamples.view.main.MainView', {
 						}
 					]
 				},
-
-
+				{
+					xtype: 'ex10-ckeditor-view'
+				}
 			]
 		}
 	]
